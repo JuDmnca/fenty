@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fenty Sunglasses</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Vollkorn:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar">
+        <span class="navbar-brand mb-0 h1">Fenty Sunglasses</span>
+        <ul>
+          <li>Mon compte</li>
+          <li>Assistance</li>
+          <li><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="19.14px" height="21.12px" viewBox="0 0 19.14 21.12" preserveAspectRatio="xMidYMid meet" class="icon icon-svg icon-svg-bag"><g data-v-7fc828f0="" transform="scale(0.66)"><!----> <path data-v-7fc828f0="" d="M18.477 2.787h0.052q-1.652-1.652-3.819-1.652-2.323 0-4.026 1.652h0.052q-1.858 1.703-1.858 3.923v2.271h-6.297v21.935h23.742v-21.935h-6.039v-2.271q0-2.219-1.806-3.923zM17.032 4.232l0.052 0.052q1.135 1.032 1.135 2.426v2.271h-7.277v-2.271q0-1.394 1.187-2.426 1.084-1.084 2.581-1.084 1.342 0 2.323 1.032zM24.258 11.045v17.806h-19.613v-17.806h19.613z" fill="white"></path></g></svg></li>
+        </ul>
+      </nav>
+      <div class="navlist">
+        <ul>
+          <h5>boutique</h5>
+          <h5>editorial</h5>
+          <h5>a propos</h5>
+        </ul>
+      </div>
+      <div class="fluid-container first">
+        <div class="first-img"></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <h2>Découvrez notre collection de lunettes de soleil</h2>
+        </div>
+        <div class="row">
+          <div class="col-4 product-card" v-for="product in products">
+            <img :src = "product[2]">
+            <p> LUNETTES DE SOLEIL <span class="product-name">{{ product[0] }}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var app = new Vue({
+        el: "#app",
+        data: {
+          products: [ ["CLASSIFIED", "420,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dwb02fbf95/product/image/A0283N2SH/680/5x6/classified-sunglasses-rose-havana-2_1700w.jpg"],
+                      ["SIDE-EYE", "650,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dwf98a6ce0/product/image/A0234N1CL/710/5x6/side-eye-sunglasses-gold-1_748w.jpg"],
+                      ["SIDE NOTE", "400,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dwf8e789b0/product/image/A0264N1CL/300/5x6/side-note-sunglasses-camo-green-1_1700w.jpg"],
+                      ["TROUBLE", "220,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dwa8408bda/product/image/A0228N1CL/920/5x6/trouble-sunglasses-white-marble-1_1700w.jpg"],
+                      ["CODED", "300,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dw665b25bc/product/image/A0282A4SH/100/5x6/coded-sunglasses-milky-way-2_1700w.jpg"],
+                      ["ANTISOCIAL", "400,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dw2e897c7a/product/image/A0035N1CL/200/5x6/antisocial-sunglasses-chardonnay-1_540w.jpg"]]
+        }
+      })
+    </script>
+  </body>
+</html>

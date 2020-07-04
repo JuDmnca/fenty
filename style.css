@@ -1,0 +1,71 @@
+body {
+  background-color: #F9F7EE;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+  color: white;
+  padding: 2.5rem 3rem;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+}
+.navbar .h1 {
+  font-family: 'Vollkorn', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.navbar ul {
+  align-items: flex-end;
+  display: flex;
+  list-style-type:none;
+  margin: 0;
+}
+.navbar li {
+  font-size: 13px;
+  float: left;
+  padding: 0 1rem;
+}
+
+.navlist {
+  color: white;
+  display: block;
+  left: 3rem;
+  position: fixed;
+  text-transform: uppercase;
+  top: 48%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.navlist h5 {
+  padding-bottom: 0.5rem;
+}
+
+.first {
+  background-color: #DF9F6F;
+  height: 100vh;
+}
+.first-img {
+  background-size: cover;
+  background-image: url('https://www.fenty.com/on/demandware.static/-/Library-Sites-LoudSharedLibrary/default/dw3167e68b/blog/articles/article-24/twin-images/r3x4/article-24-twin-3x4-006_2700w.jpg');
+  background-position: top;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  transform:scaleX(-1);
+  width: 50vw;
+  z-index: 10;
+}
+
+.product-card img {
+  display: block;
+  height: auto;
+  width: 100%;
+ }
+.product-name {
+  font-family: 'Vollkorn', serif;
+  font-style: italic;
+  font-weight: 600;
+}
