@@ -34,6 +34,7 @@ body {
   position: fixed;
   text-transform: uppercase;
   top: 48%;
+  z-index: 100;
 }
 ul {
   list-style: none;
@@ -43,20 +44,29 @@ ul {
   padding-bottom: 0.5rem;
 }
 
-.first {
-  background-color: #DF9F6F;
+.first, .first-background, .first-img {
   height: 100vh;
+}
+.first-background {
+  background-color: #DF9F6F;
+  position: absolute;
+  width: 100vw;
+  z-index: 10;
 }
 .first-img {
   background-size: cover;
+  background-repeat: no-repeat;
   background-image: url('https://www.fenty.com/on/demandware.static/-/Library-Sites-LoudSharedLibrary/default/dw3167e68b/blog/articles/article-24/twin-images/r3x4/article-24-twin-3x4-006_2700w.jpg');
   background-position: top;
-  height: 100vh;
   position: absolute;
   right: 0;
   transform:scaleX(-1);
   width: 50vw;
-  z-index: 10;
+  z-index: 20;
+}
+
+.row h2 {
+  padding: 5rem 0;
 }
 
 .product-card img {

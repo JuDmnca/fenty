@@ -27,6 +27,7 @@
         </ul>
       </div>
       <div class="fluid-container first">
+        <div class="first-background"></div>
         <div class="first-img"></div>
       </div>
       <div class="container">
@@ -54,6 +55,16 @@
                       ["ANTISOCIAL", "400,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dw2e897c7a/product/image/A0035N1CL/200/5x6/antisocial-sunglasses-chardonnay-1_540w.jpg"]]
         }
       })
+
+      window.addEventListener('scroll', function(e){
+        var scrolled = window.pageYOffset;
+        var topBg = document.querySelector(".first-background");
+        var topImg = document.querySelector(".first-img");
+        var coordsBg = (- (scrolled *0.2) + 'px');
+        var coordsImg = '0% '+ (- (scrolled *0.1) + 'px');
+        topBg.style.transform  = 'translate3d(0px,' + coordsBg + ', 0px)';
+        topImg.style.backgroundPosition  = coordsImg;
+      });
     </script>
   </body>
 </html>
