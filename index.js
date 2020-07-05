@@ -15,7 +15,7 @@ window.addEventListener('scroll', function(e){
   var topBg = document.querySelector(".first-background");
   var topImg = document.querySelector(".first-img");
   var coordsBg = (- (scrolled *0.2) + 'px');
-  var coordsImg = '0% '+ (- (scrolled *0.1) + 'px');
+  var coordsImg = '0% '+ ((scrolled *0.1) + 'px');
   topBg.style.transform  = 'translate3d(0px,' + coordsBg + ', 0px)';
   topImg.style.backgroundPosition  = coordsImg;
 });
