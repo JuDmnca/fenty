@@ -65,8 +65,13 @@ ul {
   z-index: 20;
 }
 
+.row {
+  justify-content: center;
+  padding: 5rem 0 0 0;
+}
 .row h2 {
-  padding: 5rem 0;
+  font-family: 'Vollkorn', serif;
+  text-transform: uppercase;
 }
 
 .product-card img {
