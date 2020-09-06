@@ -31,16 +31,13 @@
         <div class="first-img"></div>
       </div>
       <div class="container">
-        <div class="row text-row">
+        <div class="row">
           <h2>Découvrez notre collection</h2>
           <p>Faites impression dans nos lunettes de soleil, des pièces classiques de la Maison Fenty.</p>
         </div>
-        <div class="row">
-          <div class="col-4 product-card" v-for="product in products">
-            <img :src = "product[2]">
-            <p> LUNETTES DE SOLEIL <span class="product-name">{{ product[0] }}</span></p>
+          <div class="row">
+            <product-card v-for="product in products" v-bind:name= "product[0]" v-bind:image= "product[2]"></product-card>
           </div>
-        </div>
       </div>
     </div>
     <script type="text/javascript" src="index.js"></script>

@@ -1,3 +1,12 @@
+Vue.component('product-card', {
+  template: `
+    <div class="col-4 product-card">
+      <img :src = "image">
+      <p> LUNETTES DE SOLEIL <span class="product-name"> {{name}} </span></p>
+    </div>`,
+  props: ['image','name']
+})
+
 var app = new Vue({
   el: "#app",
   data: {
@@ -13,10 +22,13 @@ var app = new Vue({
 
 window.addEventListener('scroll', function(e){
   var scrolled = window.pageYOffset;
+
   var topBg = document.querySelector(".first-background");
-  var topImg = document.querySelector(".first-img");
   var coordsBg = (- (scrolled *0.2) + 'px');
-  var coordsImg = '0% '+ ((scrolled *0.1) + 'px');
   topBg.style.transform  = 'translate3d(0px,' + coordsBg + ', 0px)';
+
+  var topImg = document.querySelector(".first-img");
+  var coordsImg = '0% '+ ((scrolled *0.1) + 'px');
   topImg.style.backgroundPosition  = coordsImg;
+
 });
