@@ -11,7 +11,7 @@ body {
   width: 100vw;
   z-index: 100;
 }
-.navbar .h1 {
+.navbar .h2 {
   font-family: 'Vollkorn', serif;
   font-weight: 600;
   text-transform: uppercase;
@@ -46,7 +46,7 @@ ul {
   padding: 0;
 }
 .navlist h5 {
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
 }
 
 .navbar.scrolled, .navlist.scrolled, .bag.scrolled {
@@ -96,15 +96,17 @@ ul {
 }
 
 .btn-marquee {
-  font-weight: 600;
+  background-color: #df9f6f;
   border: none;
   border-radius: 0;
-  background-color: #df9f6f;
+  font-family: 'Vollkorn', serif;
+  font-weight: 600;
   overflow: hidden;
   transition: 0.3s;
   text-transform: uppercase;
 }
 .btn-marquee:hover {
+  background-color: #5C3D2D;
   transform: scale(1.1);
 }
 .btn-marquee span {

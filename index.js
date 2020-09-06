@@ -1,6 +1,6 @@
 Vue.component('product-card', {
   template: `
-    <div class="col-4 product-card">
+    <div class="col-6 product-card">
       <img :src = "image">
       <p> LUNETTES DE SOLEIL <span class="product-name"> {{name}} </span></p>
       <button v-on:click="pass_order(name)" class="btn btn-primary btn-marquee">
