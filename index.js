@@ -3,8 +3,16 @@ Vue.component('product-card', {
     <div class="col-4 product-card">
       <img :src = "image">
       <p> LUNETTES DE SOLEIL <span class="product-name"> {{name}} </span></p>
+      <button v-on:click="pass_order(name)" class="btn btn-primary btn-marquee">
+        <span data-text="Ajouter au panier">Ajouter au panier</span>
+      </button>
     </div>`,
-  props: ['image','name']
+  props: ['image','name'],
+  methods:{
+    pass_order: function(produit){
+      this.$emit('passed-order', produit)
+    }
+  }
 })
 
 var app = new Vue({
@@ -16,7 +24,14 @@ var app = new Vue({
       ["SIDE NOTE", "400,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dwf8e789b0/product/image/A0264N1CL/300/5x6/side-note-sunglasses-camo-green-1_1700w.jpg"],
       ["TROUBLE", "220,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dwa8408bda/product/image/A0228N1CL/920/5x6/trouble-sunglasses-white-marble-1_1700w.jpg"],
       ["CODED", "300,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dw665b25bc/product/image/A0282A4SH/100/5x6/coded-sunglasses-milky-way-2_1700w.jpg"],
-      ["ANTISOCIAL", "400,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dw2e897c7a/product/image/A0035N1CL/200/5x6/antisocial-sunglasses-chardonnay-1_540w.jpg"]]
+      ["ANTISOCIAL", "400,00 EUR", "https://www.fenty.com/on/demandware.static/-/Sites-loud-project-common-catalog/default/dw2e897c7a/product/image/A0035N1CL/200/5x6/antisocial-sunglasses-chardonnay-1_540w.jpg"]
+    ],
+    orders: [],
+  },
+  methods:{
+    order: function(product){
+      this.orders.push(product);
+    }
   }
 })
 
@@ -32,3 +47,26 @@ window.addEventListener('scroll', function(e){
   topImg.style.backgroundPosition  = coordsImg;
 
 });
+
+let scrollpos = window.scrollY
+var w_height = window.innerHeight;
+const header = document.querySelector(".navbar");
+const side = document.querySelector(".navlist");
+const bag = document.querySelector(".bag");
+
+const add_class_top_on_scroll = () => header.classList.add("scrolled") & bag.classList.add("scrolled")
+const remove_class_top_on_scroll = () => header.classList.remove("scrolled") & bag.classList.remove("scrolled")
+
+const add_class_side_on_scroll = () => side.classList.add("scrolled")
+const remove_class_side_on_scroll = () => side.classList.remove("scrolled")
+
+window.addEventListener('scroll', function() {
+  scrollpos = window.scrollY;
+
+  if (scrollpos >= (w_height*0.75)) { add_class_top_on_scroll() }
+  else { remove_class_top_on_scroll() }
+
+  if (scrollpos >= (w_height*0.4)) { add_class_side_on_scroll() }
+  else { remove_class_side_on_scroll() }
+
+})

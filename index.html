@@ -15,8 +15,7 @@
         <span class="navbar-brand mb-0 h1">Fenty Sunglasses</span>
         <ul>
           <li>Mon compte</li>
-          <li>Assistance</li>
-          <li><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="19.14px" height="21.12px" viewBox="0 0 19.14 21.12" preserveAspectRatio="xMidYMid meet" class="icon icon-svg icon-svg-bag"><g data-v-7fc828f0="" transform="scale(0.66)"><!----> <path data-v-7fc828f0="" d="M18.477 2.787h0.052q-1.652-1.652-3.819-1.652-2.323 0-4.026 1.652h0.052q-1.858 1.703-1.858 3.923v2.271h-6.297v21.935h23.742v-21.935h-6.039v-2.271q0-2.219-1.806-3.923zM17.032 4.232l0.052 0.052q1.135 1.032 1.135 2.426v2.271h-7.277v-2.271q0-1.394 1.187-2.426 1.084-1.084 2.581-1.084 1.342 0 2.323 1.032zM24.258 11.045v17.806h-19.613v-17.806h19.613z" fill="white"></path></g></svg></li>
+          <li><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="19.14px" height="21.12px" viewBox="0 0 19.14 21.12" preserveAspectRatio="xMidYMid meet" class="icon icon-svg icon-svg-bag"><g data-v-7fc828f0="" transform="scale(0.66)"><!----> <path class='bag' data-v-7fc828f0="" d="M18.477 2.787h0.052q-1.652-1.652-3.819-1.652-2.323 0-4.026 1.652h0.052q-1.858 1.703-1.858 3.923v2.271h-6.297v21.935h23.742v-21.935h-6.039v-2.271q0-2.219-1.806-3.923zM17.032 4.232l0.052 0.052q1.135 1.032 1.135 2.426v2.271h-7.277v-2.271q0-1.394 1.187-2.426 1.084-1.084 2.581-1.084 1.342 0 2.323 1.032zM24.258 11.045v17.806h-19.613v-17.806h19.613z" fill="white"></path></g></svg></li>
         </ul>
       </nav>
       <div class="navlist">
@@ -30,13 +29,13 @@
         <div class="first-background"></div>
         <div class="first-img"></div>
       </div>
-      <div class="container">
+      <div class="container col-8">
         <div class="row">
           <h2>Découvrez notre collection</h2>
           <p>Faites impression dans nos lunettes de soleil, des pièces classiques de la Maison Fenty.</p>
         </div>
           <div class="row">
-            <product-card v-for="product in products" v-bind:name= "product[0]" v-bind:image= "product[2]"></product-card>
+            <product-card v-for="product in products" v-on:passed-order="order()"  v-bind:name="product[0]" v-bind:image="product[2]"></product-card>
           </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ body {
   color: white;
   padding: 2.5rem 3rem;
   position: fixed;
+  transition: ease 0.2s;
   width: 100vw;
   z-index: 100;
 }
@@ -26,6 +27,9 @@ body {
   float: left;
   padding: 0 1rem;
 }
+.bag {
+  transition: ease 0.2s;
+}
 
 .navlist {
   color: white;
@@ -34,6 +38,7 @@ body {
   position: fixed;
   text-transform: uppercase;
   top: 48%;
+  transition: ease 0.2s;
   z-index: 100;
 }
 ul {
@@ -42,6 +47,11 @@ ul {
 }
 .navlist h5 {
   padding-bottom: 0.5rem;
+}
+
+.navbar.scrolled, .navlist.scrolled, .bag.scrolled {
+  color: black;
+  fill: black;
 }
 
 .first, .first-background, .first-img {
@@ -83,4 +93,38 @@ ul {
   font-family: 'Vollkorn', serif;
   font-style: italic;
   font-weight: 600;
+}
+
+.btn-marquee {
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  background-color: #df9f6f;
+  overflow: hidden;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+.btn-marquee:hover {
+  transform: scale(1.1);
+}
+.btn-marquee span {
+  display: block;
+  padding: 0 10px;
+  animation: move-left 4s linear infinite;
+}
+.btn-marquee span::after {
+  position: absolute;
+  content: attr(data-text);
+  top: 0;
+  left: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+@keyframes move-left {
+  to {
+    transform: translateX(-100%);
+  }
 }
